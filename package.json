@@ -1,5 +1,5 @@
 {
-  "name": "glsl-transition-thumbnail-headless",
+  "name": "glsl-transition-thumbnail",
   "version": "0.0.1",
   "description": "Compute a thumbnail for a glsl-transition via CLI",
   "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
