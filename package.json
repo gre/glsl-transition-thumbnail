@@ -1,6 +1,6 @@
 {
   "name": "glsl-transition-thumbnail",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Compute a thumbnail for a glsl-transition via CLI",
   "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
   "main": "index.js",
@@ -17,10 +17,9 @@
     "gl": "0.0.5"
   },
   "devDependencies": {
-    "baboon-image": "1.0.0",
-    "lena": "1.0.0",
-    "gl-texture2d": "1.1.0",
-    "node-webgl": "git://github.com/gre/node-webgl.git"
+    "node-webgl": "git://github.com/gre/node-webgl.git",
+    "q": "1.0.x",
+    "qimage": "1.1.x"
   },
   "license": "MIT"
 }

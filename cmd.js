@@ -1,8 +1,13 @@
  var GlslTransitionThumbnail = require("./index.js");
+var Q = require("q");
+var Qimage = require("qimage");
 var WebGL = require("node-webgl");
+
 var document = WebGL.document();
 var Image = WebGL.Image;
 
+// Configure libs for this context
+Qimage.Image = Image;
 GlslTransitionThumbnail.getDocument = function () {
   return document;
 };
@@ -22,10 +27,7 @@ var toSrc = "./to.png";
 
 /////////////////////
 
-var from = new Image();
-var to = new Image();
-
-function render () {
+function render (from, to) {
   var pixels = GlslTransitionThumbnail(width, height, glsl, {
     from: from,
     to: to
@@ -38,12 +40,8 @@ function render () {
   }
 }
 
-from.onload = function () {
-  to.onload = function () {
-    render();
-  }
-};
-from.src = fromSrc;
-to.src = toSrc;
-
+Q.all([
+  Qimage(fromSrc),
+  Qimage(toSrc)
+]).spread(render);
 
