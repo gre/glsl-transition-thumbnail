@@ -1,6 +1,11 @@
  var GlslTransitionThumbnail = require("./index.js");
 var WebGL = require("node-webgl");
+var document = WebGL.document();
 var Image = WebGL.Image;
+
+GlslTransitionThumbnail.getDocument = function () {
+  return document;
+};
 
 /////////////////////
 // Parameters

@@ -1,8 +1,7 @@
 var GlslTransitionCore = require("glsl-transition-core");
-var WebGL = require("node-webgl");
-var document = WebGL.document();
 
 function GlslTransitionThumbnail (width, height, glsl, uniforms, progress) {
+  var document = GlslTransitionThumbnail.getDocument();
   var canvas = document.createElement("canvas"); // This is creating a window :S
   canvas.width = width;
   canvas.height = height;
@@ -27,5 +26,9 @@ function GlslTransitionThumbnail (width, height, glsl, uniforms, progress) {
   return pixels;
 }
 
+GlslTransitionThumbnail.getDocument = function () {
+  if (typeof window !== "undefined") return window.document;
+  throw new Error('You must implement GlslTransitionThumbnail.getDocument. e.g.: require("node-webgl").document()');
+};
 
 module.exports = GlslTransitionThumbnail;
