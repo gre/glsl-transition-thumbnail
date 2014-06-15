@@ -1,7 +1,7 @@
 {
   "name": "glsl-transition-thumbnail",
   "version": "0.0.2",
-  "description": "Compute a thumbnail for a glsl-transition via CLI",
+  "description": "Compute a thumbnail for a glsl-transition via CLI or browser",
   "author": "Gaëtan Renaudeau <renaudeau.gaetan@gmail.com>",
   "main": "index.js",
   "bin": {
